@@ -3,6 +3,7 @@ package vistula.edu.pl.CRUD_App;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridSortOrder;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -40,12 +41,15 @@ public class MainView extends VerticalLayout {
 
         this.sortFirstNameBtn = new Button("Sort by First Name", VaadinIcon.ARROW_UP.create());
 
+        // 1. Create the section header
+        H2 tableHeader = new H2("List of Customers");
+
         HorizontalLayout actions = new HorizontalLayout(filter, addNewBtn, sortFirstNameBtn);
-        add(actions, grid, editor);
+
+        // 2. Add the header above the action controls and grid
+        add(tableHeader, actions, grid, editor);
 
         grid.setHeight("300px");
-
-        // --- ADDED "sex" TO THE COLUMNS LIST HERE ---
         grid.setColumns("id", "firstName", "lastName", "sex");
 
         grid.getColumnByKey("id").setWidth("50px").setFlexGrow(0);
