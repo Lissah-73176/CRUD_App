@@ -9,7 +9,7 @@ Screenshots of startup logs
 ![img_3.png](img_3.png)
 
 Screenshots of commit history
-![img_1.png](img_1.png)
+![01.png](../../OneDrive/Pictures/Screenshots/01.png)
 ![img_2.png](img_2.png)
 
 Screenshots of CRUD functionality
