@@ -1,6 +1,5 @@
 package vistula.edu.pl.CRUD_App;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -13,15 +12,20 @@ public class Customer {
     private Long id;
 
     private String firstName;
-
     private String lastName;
+    private String sex;
 
-    protected Customer() {
-    }
+    protected Customer() {}
 
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Customer(String firstName, String lastName, String sex) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.sex = sex;
     }
 
     public Long getId() {
@@ -44,10 +48,12 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id,
-                firstName, lastName);
+    // <-- 2. Add Getter and Setter for sex
+    public String getSex() {
+        return sex;
     }
 
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }
